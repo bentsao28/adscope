@@ -42,7 +42,7 @@ header ul li{
 	top:-60px;
 }
 #top{
-	background: url("../static/images/picjumbo.com_HNCK3281.jpg");
+	background: url("images/picjumbo.com_HNCK3281.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -50,7 +50,7 @@ header ul li{
 	text-align: center;
 }
 #businesstop{
-	background: url("../static/images/iStock-Unfinished-Business-9.jpg");
+	background: url("images/iStock-Unfinished-Business-9.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -76,7 +76,7 @@ header ul li{
 #corppic{
 	height: 350px;
 	width: 350px;
-	background-image: url("../static/images/iStockUnfinishedBusiness4.jpg");
+	background-image: url("images/iStockUnfinishedBusiness4.jpg");
 	background-position: center center;
 	background-size: 100%;
 	margin: 0 auto;
@@ -87,7 +87,7 @@ header ul li{
 #conspic{
 	height: 350px;
 	width: 350px;
-	background-image: url("../static/images/picjumbo.com_HNCK2634.jpg");
+	background-image: url("images/picjumbo.com_HNCK2634.jpg");
 	background-position: center center;
 	background-size: 100%;
 	margin: 0 auto;
@@ -147,4 +147,5 @@ span.text-content span {
 
 .footer ul li a{
 	text-decoration: none;
+	color: gray;
 }

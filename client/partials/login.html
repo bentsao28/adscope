@@ -1,45 +1,56 @@
 <div ng-controller="registerController">
-	<header>
-		<ul>
-			<a class="navbar-brand" href="#/"><span style="font-size: 25px;color:white; text-shadow: 2px 2px 0 black;">adSCOPE</span></a>
-			<a href="#/register"><li>Register</li></a>
-		</ul>
-	</header>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12" style="text-align: center; margin-top:2%;margin-bottom:2%;">
-				<h2>Log in to your adScope account</h2>
+	<div id="wrapper2">
+		<header>
+			<ul>
+				<a class="navbar-brand" href="#/"><span style="font-size: 25px;color:white; text-shadow: 2px 2px 0 black;">adSCOPE</span></a>
+				<a href="#/register"><li>Register</li></a>
+			</ul>
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12" style="text-align: center; margin-top:2%;margin-bottom:2%;">
+					<h2>Log in to your adScope account</h2>
+				</div>
 			</div>
+			<div class="row" style="margin-bottom:5%;">
+				<div class="col-md-6">
+					<h3>User account login</h3>
+					<form ng-submit="userLogin()">
+						<div class="form-group">	
+							<label>Email:</label>
+							<input type="text" class="form-control" ng-model="newLogin.email">
+						</div>	
+						<div class="form-group">
+							<label>Password:</label>
+							<input type="password" class="form-control" ng-model="newLogin.password">
+						</div>
+						<button class="btn btn-default" type="submit">Submit</button>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<h3>Businesss account login</h3>
+					<form ng-submit="addUser()">
+						<div class="form-group">	
+							<label>Email:</label>
+							<input type="text" class="form-control" ng-model="newUser.email">
+						</div>	
+						<div class="form-group">
+							<label>Password:</label>
+							<input type="password" class="form-control" ng-model="newUser.password">
+						</div>
+						<button class="btn btn-default" type="submit">Submit</button>
+					</form>
+				</div>
+			</div>		
 		</div>
-		<div class="row">
-			<div class="col-md-6">
-				<h3>User account login</h3>
-				<form ng-submit="userLogin()">
-					<div class="form-group">	
-						<label>Email:</label>
-						<input type="text" class="form-control" ng-model="newLogin.email">
-					</div>	
-					<div class="form-group">
-						<label>Password:</label>
-						<input type="password" class="form-control" ng-model="newLogin.password">
-					</div>
-					<button class="btn btn-default" type="submit">Submit</button>
-				</form>
-			</div>
-			<div class="col-md-6">
-				<h3>Businesss account login</h3>
-				<form ng-submit="addUser()">
-					<div class="form-group">	
-						<label>Email:</label>
-						<input type="text" class="form-control" ng-model="newUser.email">
-					</div>	
-					<div class="form-group">
-						<label>Password:</label>
-						<input type="password" class="form-control" ng-model="newUser.password">
-					</div>
-					<button class="btn btn-default" type="submit">Submit</button>
-				</form>
-			</div>
-		</div>		
+		<footer class="footer">
+		 	<ul>
+		 		<li><a href="">Terms and Conditions</a></li>
+		 		<li><a href="">Privacy Policy</a></li>
+		 		<li><a href="">About Us</a></li>
+		 		<li><a href="">Contact</a></li>
+		 	</ul>
+		 	<h5 style="color: gray;">Copyright &copy 2015 adSCOPE Inc.</h5>
+		</footer>
 	</div>
 </div>
