@@ -1,0 +1,52 @@
+<div ng-controller="registerController">
+	<header>
+		<ul>
+			<a class="navbar-brand" href="#/"><span style="font-size: 25px;color:white; text-shadow: 2px 2px 0 black;">adSCOPE</span></a>
+			<a href="#/userlogin"><li>Login</li></a>
+		</ul>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" style="text-align: center; margin-top:2%;margin-bottom:2%;">
+				<h2>Create your adScope account</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h3>New User Registration</h3>
+				<a href=""><p>Company or business? Click to contact us and speak to an account manager</p></a>
+				<form name="userForm" ng-submit="addUser(userForm.$valid)" novalidate>
+					<div class="form-group" ng-class="{ 'has-error' : userForm.fname.$invalid && !userForm.fname.$pristine }">
+						<label>First Name:</label>
+						<input type="text" name="fname" class="form-control" ng-model="newUser.fname" required>
+						<p ng-show="userForm.fname.$invalid && !userForm.fname.$pristine" class="help-block">Your first name is required!</p>
+					</div>
+					<div class="form-group" ng-class="{ 'has-error' : userForm.lname.$invalid && !userForm.lname.$pristine }">
+						<label>Last Name:</label>
+						<input type="text" name="lname" class="form-control" ng-model="newUser.lname" required>
+						<p ng-show="userForm.lname.$invalid && !userForm.lname.$pristine" class="help-block">Your last name is required!</p>
+					</div>
+					<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">	
+						<label>Email:</label>
+						<input type="email" name="email" class="form-control" ng-model="newUser.email">
+						<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email</p>
+					</div>	
+					<div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+						<label>Password:</label>
+						<input type="password" name="password" class="form-control" ng-model="newUser.password" ng-minlength="6">
+						<p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Your password is too short!</p>
+					</div>
+					<div class="form-group">
+						<label>Confirm Password:</label>
+						<input type="password" name="confirm" class="form-control" ng-model="newUser.confirm">
+					</div>
+					<button class="btn btn-default" type="submit" ng-disabled="userForm.$invalid">Submit</button>
+				</form>
+			</div>
+			<div class="col-md-6" style="text-align:center;">
+				<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size:5vw; color: #4169e1;"></span>
+				<h4>Signing up is free and easy! Start working with real companies and making real money in minutes!</h4>
+			</div>
+		</div>		
+	</div>
+</div>
