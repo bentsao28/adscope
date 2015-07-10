@@ -56,6 +56,7 @@ module.exports = function(app){
 		res.send(req.isAuthenticated() ? req.user: '0');
 	});
 	app.post('/login', passport.authenticate('local'), function(req,res){
+		req.session.user_id = req.user._id
 		res.send(req.user);
 	});
 	app.post('/logout', function(req,res){

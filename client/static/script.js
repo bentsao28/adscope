@@ -64,6 +64,12 @@ myApp.factory('myAppFactory', function($http){
 			callback();
 		})
 	}
+	factory.getUser = function(callback){
+		$http.get('/get_user').success(function(output){
+			user = output
+			callback(user);
+		})
+	}
 	factory.userLogin = function(info, callback){
 		$http.post('/login', info).success(function(){
 			callback();
@@ -77,9 +83,10 @@ myApp.factory('myAppFactory', function($http){
 	return factory;
 })
 myApp.controller('registerController', function($scope, $rootScope, $location, myAppFactory){
-	$scope.addUser = function(isValid){
+	$scope.addUser = function(isValid, message){
 		if(isValid){
 			myAppFactory.addUser($scope.newUser, function(){
+				$rootScope.message = 'Successfully registered account!';
 				$location.path('/userlogin');
 			})
 		}
@@ -92,6 +99,10 @@ myApp.controller('registerController', function($scope, $rootScope, $location, m
 	}
 })
 myApp.controller('dashboardController', function($scope, $rootScope, $location, myAppFactory){
+	myAppFactory.getUser(function(data){
+		console.log(data)
+		$scope.user = data;
+	})
 	$scope.logOut = function(){
 		myAppFactory.logOut(function(){
 			$location.path('/userlogin');

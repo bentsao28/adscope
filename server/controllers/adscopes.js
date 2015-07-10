@@ -13,4 +13,9 @@ data.addu = function(req,res){
 		}
 	})
 }
+data.showoneu = function(req,res){
+	User.find({_id:req.session.user_id}, function(err, results){
+		res.json(results);
+	})
+}
 module.exports = data;
